@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Sitemap: https://zonacaninavaporcito.github.io/sitemap.xml
+
+# AI crawlers — permitido para visibilidad, con respeto a la campaña
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
