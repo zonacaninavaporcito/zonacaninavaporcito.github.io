@@ -4,520 +4,179 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ZonaCaninaVaporcito — Un parque digno en El Puerto</title>
-<meta name="description" content="Campaña ciudadana para conseguir la zona canina en Avenida Bajamar 44 (Vaporcito), El Puerto de Santa María. Firma la petición en Change.org.">
+<meta name="description" content="Campaña ciudadana para conseguir la zona canina donde estaba el Vaporcito, El Puerto de Santa María. Firma la petición y manda la foto de tu perro.">
 <meta property="og:title" content="ZonaCaninaVaporcito — El Puerto necesita su zona canina">
-<meta property="og:description" content="9.000 hogares con perro. 2 zonas caninas. La cuenta no sale. Firma para que Bajamar 44 sea parque canino.">
+<meta property="og:description" content="9.000 hogares con perro. 2 zonas caninas. La cuenta no sale. Firma para recuperar donde estaba el Vaporcito.">
 <meta property="og:image" content="https://linktr.ee/zonacaninavaporcito">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=EB+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#FDF8F0;
-    --ink:#121E2A;
-    --ink-2:#2A3F55;
-    --indigo:#163A59;
-    --azulejo:#1B6B6B;
-    --teja:#C43C2A;
-    --teja-2:#A83123;
-    --albero:#F2C14E;
-    --albero-2:#FFD86B;
-    --sarga:#7A8B6F;
-    --line:rgba(18,30,42,.12);
-    --line-strong:rgba(18,30,42,.18);
-    --cream-2:#FFF7E8;
-    --shadow: 0 18px 40px rgba(18,42,60,.14), 0 2px 8px rgba(18,42,60,.08);
-    --radius:22px;
-    --radius-sm:14px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0; font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    background:var(--paper); color:var(--ink); line-height:1.55;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  }
-  a{color:inherit}
-  ::selection{background:var(--albero); color:var(--ink)}
-  :focus-visible{outline:3px solid var(--albero); outline-offset:2px}
-  /* header / bando */
-  .top-bando{
-    background: linear-gradient(180deg, #fff 0%, var(--paper) 100%);
-    border-bottom:1.5px solid var(--line-strong);
-    position:sticky; top:0; z-index:40; backdrop-filter:saturate(1.05);
-  }
-  .top-bando-inner{
-    max-width:1180px; margin:0 auto; padding:10px 20px;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-  }
-  .brand{
-    display:flex; align-items:center; gap:12px; text-decoration:none;
-  }
-  .seal{
-    width:42px; height:42px; border-radius:50%; background:var(--teja);
-    display:grid; place-items:center; color:white; font:800 11px/1 Bricolage Grotesque;
-    letter-spacing:.14em; text-transform:uppercase; box-shadow:0 4px 12px rgba(196,60,42,.35);
-    border:2px solid #fff; outline:1px solid rgba(196,60,42,.25);
-  }
-  .brand-text b{font-family: Bricolage Grotesque; font-weight:800; font-size:17px; letter-spacing:-.02em}
-  .brand-text span{display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; opacity:.7; font-weight:700; margin-top:-2px}
-  .nav{ display:flex; gap:10px; align-items:center}
-  .nav a{font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; text-decoration:none; padding:8px 10px; border-radius:999px}
-  .nav a:hover{background:rgba(18,30,42,.06)}
-  .cta-small{
-    background:var(--teja); color:#fff !important; padding:10px 16px !important; border-radius:999px !important;
-    box-shadow:0 6px 16px rgba(196,60,42,.28); transition:transform .15s ease, background .15s ease;
-  }
-  .cta-small:hover{background:var(--teja-2); transform:translateY(-1px)}
-  /* feria stripe */
-  .feria-stripe{
-    height:8px; background: repeating-linear-gradient(90deg, var(--albero) 0 22px, #fff 22px 44px, var(--teja) 44px 66px, #fff 66px 88px);
-    border-top:1px solid var(--line-strong); border-bottom:1px solid var(--line-strong);
-  }
-  /* hero */
-  .hero{
-    max-width:1180px; margin:0 auto; padding:28px 20px 18px;
-    display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:start;
-  }
-  @media (max-width:900px){ .hero{grid-template-columns:1fr; padding-top:18px} }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--azulejo);
-    background:#fff; border:1px solid var(--line); padding:6px 10px; border-radius:999px;
-  }
-  .eyebrow i{width:8px; height:8px; background:var(--teja); border-radius:50%; display:inline-block; box-shadow:0 0 0 4px rgba(196,60,42,.12)}
-  h1{
-    font-family:EB Garamond, Georgia, serif; font-weight:700; line-height:.92;
-    font-size: clamp(38px, 6.2vw, 64px); letter-spacing:-.03em; margin:14px 0 12px;
-  }
-  h1 em{font-weight:600; font-style:italic; color:var(--indigo); position:relative}
-  h1 em:after{
-    content:""; position:absolute; left:0; right:0; bottom:.1em; height:.28em; background:rgba(242,193,78,.45); z-index:-1;
-  }
-  .lead{font-size:18px; color:var(--ink-2); max-width:58ch; margin:0 0 18px; line-height:1.55}
-  .hero-actions{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin:18px 0 14px}
-  .btn-primary{
-    display:inline-flex; align-items:center; gap:10px; background:var(--teja); color:#fff; text-decoration:none;
-    font-weight:800; letter-spacing:.02em; font-size:16px; padding:16px 22px; border-radius:999px;
-    box-shadow: 0 10px 26px rgba(196,60,42,.28), 0 2px 0 rgba(0,0,0,.06) inset; transition:transform .15s, background .15s;
-  }
-  .btn-primary:hover{background:var(--teja-2); transform:translateY(-1px)}
-  .btn-primary:active{transform:translateY(0)}
-  .btn-ghost{
-    display:inline-flex; align-items:center; gap:8px; background:#fff; border:1.5px solid var(--line-strong);
-    padding:14px 18px; border-radius:999px; font-weight:700; font-size:14px; text-decoration:none;
-  }
-  .btn-ghost:hover{background:var(--cream-2)}
-  .proof-mini{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
-  .proof-mini span{
-    font-size:12px; font-weight:700; letter-spacing:.04em; background:#fff; border:1px solid var(--line);
-    padding:7px 10px; border-radius:999px; display:inline-flex; align-items:center; gap:6px;
-  }
-  .proof-mini s{ text-decoration:none; width:6px; height:6px; border-radius:50%; background:var(--sarga); display:inline-block}
-  /* contador card - nixie inspired but paper */
-  .counter-card{
-    background:#fff; border:1.5px solid var(--line-strong); border-radius:var(--radius); box-shadow:var(--shadow);
-    overflow:hidden; position:sticky; top:76px;
-  }
-  @media (max-width:900px){ .counter-card{position:relative; top:auto} }
-  .counter-head{
-    background:var(--indigo); color:#fff; padding:14px 18px; display:flex; justify-content:space-between; align-items:center;
-  }
-  .counter-head strong{font-size:11px; letter-spacing:.16em; text-transform:uppercase; opacity:.9}
-  .counter-head em{font-style:normal; font-size:12px; font-weight:700; background:rgba(255,255,255,.14); padding:5px 9px; border-radius:999px; border:1px solid rgba(255,255,255,.16)}
-  .counter-body{padding:18px}
-  .digits{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:8px;
-  }
-  .digit{
-    background:var(--paper); border:1.5px solid var(--line-strong); border-radius:12px; padding:12px 6px 10px;
-    text-align:center; position:relative; overflow:hidden;
-  }
-  .digit:before{
-    content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.9), transparent 55%);
-    pointer-events:none;
-  }
-  .digit b{font-family:Bricolage Grotesque; font-weight:800; font-size:30px; line-height:1; letter-spacing:-.04em; position:relative}
-  .digit i{font-style:normal; font-size:10px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; opacity:.55; display:block; margin-top:4px; position:relative}
-  .progress{
-    margin-top:16px; background:var(--paper); border:1px solid var(--line); border-radius:999px; height:14px; padding:3px; display:flex;
-  }
-  .progress-bar{height:100%; background:linear-gradient(90deg, var(--teja), #E85D3F); border-radius:999px; width:38%; position:relative}
-  .progress-bar:after{content:""; position:absolute; right:0; top:50%; transform:translate(50%,-50%); width:10px; height:10px; background:#fff; border:2px solid var(--teja); border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,.15)}
-  .counter-foot{padding:0 18px 18px; display:grid; gap:10px}
-  .counter-foot p{margin:0; font-size:13px; color:var(--ink-2); line-height:1.5}
-  .counter-foot p strong{color:var(--ink)}
-  .mini-stats{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-  .mini-stat{background:var(--cream-2); border:1px solid var(--line); border-radius:12px; padding:10px 12px}
-  .mini-stat b{font-size:13px; display:block}
-  .mini-stat span{font-size:11px; letter-spacing:.06em; text-transform:uppercase; opacity:.6; font-weight:700}
-  /* sections */
-  .wrap{max-width:1180px; margin:0 auto; padding:0 20px}
-  .section{padding:26px 0}
-  .section h2{
-    font-family:Bricolage Grotesque; font-weight:800; font-size:26px; letter-spacing:-.02em; margin:0 0 8px; line-height:1.1;
-  }
-  .section h2 small{display:block; font-family:Manrope; font-weight:800; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--azulejo); margin-bottom:6px}
-  .kicker{font-size:14px; color:var(--ink-2); max-width:60ch; margin:0 0 16px}
-  /* math cards */
-  .math-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-  @media (max-width:820px){ .math-grid{grid-template-columns:1fr} }
-  .math-card{
-    background:#fff; border:1.5px solid var(--line-strong); border-radius:16px; padding:16px; box-shadow:0 8px 20px rgba(18,42,60,.06);
-    display:flex; gap:14px; align-items:flex-start;
-  }
-  .math-icon{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; flex:0 0 44px; background:var(--paper); border:1px solid var(--line); font-size:18px}
-  .math-card b{font-family:Bricolage Grotesque; font-size:20px; line-height:1; display:block; margin-bottom:2px}
-  .math-card p{margin:0; font-size:13px; color:var(--ink-2); line-height:1.5}
-  .math-card .tag{font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--teja)}
-  /* map */
-  .map-layout{display:grid; grid-template-columns:1.35fr .85fr; gap:16px; align-items:start}
-  @media (max-width:900px){ .map-layout{grid-template-columns:1fr} }
-  .map-card{
-    background:#fff; border:1.5px solid var(--line-strong); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
-  }
-  .map-embed{
-    aspect-ratio: 16/10.2; background:#EAF0F6; position:relative; overflow:hidden;
-    background-image:
-      radial-gradient(circle at 22% 28%, rgba(22,58,89,.08) 0 2px, transparent 3px),
-      radial-gradient(circle at 72% 62%, rgba(196,60,42,.08) 0 3px, transparent 4px),
-      linear-gradient(180deg, #EAF0F6, #DCE8F3);
-  }
-  .map-embed iframe{width:100%; height:100%; border:0; display:block; filter:saturate(1.05) contrast(1.03)}
-  .map-pin{
-    position:absolute; left:52%; top:48%; transform:translate(-50%,-100%);
-    background:var(--teja); color:#fff; font-weight:800; font-size:12px; letter-spacing:.04em;
-    padding:8px 12px; border-radius:999px; box-shadow:0 8px 20px rgba(196,60,42,.35); border:2px solid #fff;
-    display:inline-flex; gap:6px; align-items:center; white-space:nowrap;
-  }
-  .map-caption{padding:14px 16px; display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap}
-  .map-caption strong{font-size:13px}
-  .map-caption a{font-size:13px; font-weight:800; color:var(--indigo); text-underline-offset:3px}
-  .detail-stack{display:grid; gap:12px}
-  .detail-card{background:#fff; border:1.5px solid var(--line-strong); border-radius:16px; padding:16px}
-  .detail-card h3{margin:0 0 6px; font-family:Bricolage Grotesque; font-size:16px}
-  .detail-card p{margin:0; font-size:13px; color:var(--ink-2); line-height:1.6}
-  .detail-card ul{margin:8px 0 0; padding-left:18px; font-size:13px; color:var(--ink-2); line-height:1.6}
-  .azulejo-strip{
-    height:10px; border-radius:999px; background:
-      linear-gradient(90deg, var(--azulejo) 0 10px, transparent 10px 12px, var(--azulejo) 12px 22px, transparent 22px 24px, var(--indigo) 24px 34px, transparent 34px 36px);
-    opacity:.55;
-  }
-  /* ley */
-  .law-grid{display:grid; grid-template-columns:1.05fr 1fr; gap:16px}
-  @media (max-width:900px){ .law-grid{grid-template-columns:1fr} }
-  .law-card{
-    background:var(--indigo); color:#fff; border-radius:var(--radius); padding:20px; position:relative; overflow:hidden;
-  }
-  .law-card:after{
-    content:""; position:absolute; right:-30px; top:-30px; width:180px; height:180px; border-radius:50%;
-    background: radial-gradient(circle, rgba(242,193,78,.18), transparent 70%); pointer-events:none;
-  }
-  .law-card blockquote{
-    margin:12px 0 10px; font-family:EB Garamond; font-size:20px; line-height:1.35; font-style:italic; position:relative;
-    padding-left:16px; box-shadow:inset 3px 0 0 var(--albero);
-  }
-  .law-card cite{font-style:normal; font-size:12px; letter-spacing:.08em; text-transform:uppercase; opacity:.8; font-weight:700}
-  .precedent{
-    background:#fff; border:1.5px solid var(--line-strong); border-radius:var(--radius); padding:16px; display:grid; gap:12px;
-  }
-  .precedent-head{display:flex; gap:12px; align-items:center}
-  .badge{font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; background:var(--albero); padding:6px 9px; border-radius:999px; border:1px solid rgba(0,0,0,.06)}
-  .precedent h3{margin:0; font-family:Bricolage Grotesque; font-size:18px}
-  .timeline{display:grid; gap:10px}
-  .tl{display:grid; grid-template-columns:56px 1fr; gap:10px; align-items:start}
-  .tl b{font-size:12px; font-weight:800; color:var(--azulejo); background:var(--paper); border:1px solid var(--line); padding:6px 8px; border-radius:999px; text-align:center}
-  .tl p{margin:0; font-size:13px; color:var(--ink-2); line-height:1.55}
-  /* share */
-  .share-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-  @media (max-width:700px){ .share-grid{grid-template-columns:1fr} }
-  .share-card{
-    background:#fff; border:1.5px solid var(--line-strong); border-radius:16px; padding:16px; display:flex; gap:12px; align-items:center;
-  }
-  .share-card .ic{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; color:#fff; font-weight:800; font-size:14px; flex:0 0 42px}
-  .ic-wa{background:#1FAF4E} .ic-tg{background:#2AABEE} .ic-x{background:var(--ink)} .ic-fb{background:#1877F2}
-  .share-card strong{display:block; font-size:14px}
-  .share-card span{font-size:12px; color:var(--ink-2)}
-  .share-card a{margin-left:auto; font-weight:800; font-size:13px; text-decoration:none; background:var(--paper); border:1px solid var(--line-strong); padding:8px 12px; border-radius:999px}
-  /* faq */
-  .compartments{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
-  @media (max-width:900px){ .compartments{grid-template-columns:1fr} }
-  .comp{
-    background:#fff; border:1.5px solid var(--line-strong); border-radius:16px; padding:16px; position:relative;
-  }
-  .comp:before{
-    content:""; position:absolute; top:0; left:16px; right:16px; height:4px; background: repeating-linear-gradient(90deg, var(--albero) 0 10px, transparent 10px 14px); opacity:.9; border-radius:999px;
-  }
-  .comp h3{margin:10px 0 6px; font-family:Bricolage Grotesque; font-size:15px}
-  .comp p{margin:0; font-size:13px; color:var(--ink-2); line-height:1.6}
-  /* footer */
-  footer{
-    margin-top:28px; background:var(--ink); color:#EAF0F6; padding:26px 20px;
-  }
-  .foot{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.2fr .8fr .9fr; gap:18px}
-  @media (max-width:900px){ .foot{grid-template-columns:1fr} }
-  footer a{color:#fff; text-underline-offset:3px}
-  footer h4{margin:0 0 8px; font-family:Bricolage Grotesque; font-size:15px; color:#fff}
-  footer p, footer li{font-size:13px; line-height:1.6; opacity:.88}
-  footer ul{list-style:none; padding:0; margin:0; display:grid; gap:4px}
-  .foot-bottom{
-    max-width:1180px; margin:18px auto 0; padding-top:14px; border-top:1px solid rgba(255,255,255,.14);
-    display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:11px; letter-spacing:.08em; text-transform:uppercase; opacity:.7;
-  }
-  /* sticky mobile cta */
-  .sticky-cta{
-    position:fixed; left:12px; right:12px; bottom:12px; z-index:50; display:none;
-    background:var(--teja); color:#fff; text-align:center; padding:14px 16px; border-radius:999px;
-    font-weight:800; text-decoration:none; box-shadow:0 12px 30px rgba(196,60,42,.38); border:2px solid #fff;
-  }
-  @media (max-width:700px){ .sticky-cta{display:block} body{padding-bottom:72px} }
-  /* utils */
-  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+  :root{--paper:#FDF8F0;--ink:#121E2A;--ink-2:#2A3F55;--indigo:#163A59;--azulejo:#1B6B6B;--teja:#C43C2A;--teja-2:#A83123;--albero:#F2C14E;--sarga:#7A8B6F;--line:rgba(18,30,42,.12);--line-strong:rgba(18,30,42,.18);--cream-2:#FFF7E8;--shadow:0 18px 40px rgba(18,42,60,.14),0 2px 8px rgba(18,42,60,.08);--radius:22px}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;font-family:Manrope,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit} ::selection{background:var(--albero);color:var(--ink)} :focus-visible{outline:3px solid var(--albero);outline-offset:2px}
+  .top-bando{background:linear-gradient(180deg,#fff 0%,var(--paper) 100%);border-bottom:1.5px solid var(--line-strong);position:sticky;top:0;z-index:40}
+  .top-bando-inner{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .seal{width:42px;height:42px;border-radius:50%;background:var(--teja);display:grid;place-items:center;color:#fff;font:800 11px/1 Bricolage Grotesque;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 4px 12px rgba(196,60,42,.35);border:2px solid #fff}
+  .brand-text b{font-family:Bricolage Grotesque;font-weight:800;font-size:17px;letter-spacing:-.02em}
+  .brand-text span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;font-weight:700;margin-top:-2px}
+  .nav{display:flex;gap:10px;align-items:center} .nav a{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:8px 10px;border-radius:999px} .nav a:hover{background:rgba(18,30,42,.06)}
+  .cta-small{background:var(--teja);color:#fff !important;padding:10px 16px !important;border-radius:999px !important;box-shadow:0 6px 16px rgba(196,60,42,.28)}
+  .feria-stripe{height:8px;background:repeating-linear-gradient(90deg,var(--albero) 0 22px,#fff 22px 44px,var(--teja) 44px 66px,#fff 66px 88px);border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)}
+  .hero{max-width:1180px;margin:0 auto;padding:28px 20px 18px;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start} @media(max-width:900px){.hero{grid-template-columns:1fr}}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--azulejo);background:#fff;border:1px solid var(--line);padding:6px 10px;border-radius:999px}
+  .eyebrow i{width:8px;height:8px;background:var(--teja);border-radius:50%;display:inline-block;box-shadow:0 0 0 4px rgba(196,60,42,.12)}
+  h1{font-family:EB Garamond,serif;font-weight:700;line-height:.92;font-size:clamp(38px,6.2vw,64px);letter-spacing:-.03em;margin:14px 0 12px} h1 em{font-style:italic;color:var(--indigo);position:relative} h1 em:after{content:"";position:absolute;left:0;right:0;bottom:.1em;height:.28em;background:rgba(242,193,78,.45);z-index:-1}
+  .lead{font-size:18px;color:var(--ink-2);max-width:58ch;margin:0 0 18px} .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 14px}
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--teja);color:#fff;text-decoration:none;font-weight:800;font-size:16px;padding:16px 22px;border-radius:999px;box-shadow:0 10px 26px rgba(196,60,42,.28)} .btn-primary:hover{background:var(--teja-2)}
+  .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--line-strong);padding:14px 18px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none}
+  .proof-mini{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px} .proof-mini span{font-size:12px;font-weight:700;background:#fff;border:1px solid var(--line);padding:7px 10px;border-radius:999px;display:inline-flex;gap:6px;align-items:center} .proof-mini s{width:6px;height:6px;border-radius:50%;background:var(--sarga);display:inline-block;text-decoration:none}
+  .counter-card{background:#fff;border:1.5px solid var(--line-strong);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;position:sticky;top:76px} @media(max-width:900px){.counter-card{position:relative;top:auto}}
+  .counter-head{background:var(--indigo);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center} .counter-head strong{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.9} .counter-head em{font-size:12px;font-weight:700;background:rgba(255,255,255,.14);padding:5px 9px;border-radius:999px;border:1px solid rgba(255,255,255,.16);font-style:normal}
+  .counter-body{padding:18px} .digits{display:grid;grid-template-columns:repeat(4,1fr);gap:8px} .digit{background:var(--paper);border:1.5px solid var(--line-strong);border-radius:12px;padding:12px 6px 10px;text-align:center;position:relative;overflow:hidden} .digit b{font-family:Bricolage Grotesque;font-weight:800;font-size:30px;position:relative} .digit i{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.55;display:block;margin-top:4px}
+  .progress{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:999px;height:14px;padding:3px;display:flex} .progress-bar{height:100%;background:linear-gradient(90deg,var(--teja),#E85D3F);border-radius:999px;width:38%;position:relative} .progress-bar:after{content:"";position:absolute;right:0;top:50%;transform:translate(50%,-50%);width:10px;height:10px;background:#fff;border:2px solid var(--teja);border-radius:50%}
+  .counter-foot{padding:0 18px 18px;display:grid;gap:10px} .mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px} .mini-stat{background:var(--cream-2);border:1px solid var(--line);border-radius:12px;padding:10px 12px} .mini-stat b{font-size:13px;display:block} .mini-stat span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.6;font-weight:700}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px} .section{padding:26px 0} .section h2{font-family:Bricolage Grotesque;font-weight:800;font-size:26px;letter-spacing:-.02em;margin:0 0 8px;line-height:1.1} .section h2 small{display:block;font-family:Manrope;font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--azulejo);margin-bottom:6px} .kicker{font-size:14px;color:var(--ink-2);max-width:60ch;margin:0 0 16px}
+  .math-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px} @media(max-width:820px){.math-grid{grid-template-columns:1fr}}
+  .math-card{background:#fff;border:1.5px solid var(--line-strong);border-radius:16px;padding:16px;box-shadow:0 8px 20px rgba(18,42,60,.06);display:flex;gap:14px;align-items:flex-start}
+  .math-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:0 0 44px;background:var(--paper);border:1px solid var(--line)} .math-card b{font-family:Bricolage Grotesque;font-size:20px;display:block} .math-card p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.5} .math-card .tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teja)}
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:1.6fr 1fr;gap:16px} @media(max-width:900px){.gallery{grid-template-columns:1fr}}
+  .gallery-main{background:#fff;border:1.5px solid var(--line-strong);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px} .gallery-grid img{width:100%;height:180px;object-fit:cover;border-radius:12px;display:block} .gallery-grid img.wide{grid-column:1/-1;height:240px}
+  .gallery-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px} .gallery-head strong{font-family:Bricolage Grotesque;font-size:15px}
+  .detail-stack{display:grid;gap:12px} .detail-card{background:#fff;border:1.5px solid var(--line-strong);border-radius:16px;padding:16px} .detail-card h3{margin:0 0 6px;font-family:Bricolage Grotesque;font-size:16px} .detail-card p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.6} .detail-card ul{margin:8px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2);line-height:1.6}
+  .azulejo-strip{height:10px;border-radius:999px;background:linear-gradient(90deg,var(--azulejo) 0 10px,transparent 10px 12px,var(--azulejo) 12px 22px,transparent 22px 24px,var(--indigo) 24px 34px,transparent 34px 36px);opacity:.55}
+  /* email dogs */
+  .dogs-cta{background:var(--indigo);color:#fff;border-radius:var(--radius);padding:22px;display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center;position:relative;overflow:hidden} @media(max-width:900px){.dogs-cta{grid-template-columns:1fr}}
+  .dogs-cta:after{content:"";position:absolute;right:-30px;top:-30px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(242,193,78,.18),transparent 70%);pointer-events:none}
+  .dogs-cta h2{color:#fff;margin:0 0 8px} .dogs-cta h2 small{color:var(--albero)} .dogs-cta p{color:rgba(255,255,255,.88);font-size:14px;line-height:1.6;margin:0 0 12px}
+  .dogs-cta .btn-primary{background:var(--albero);color:var(--ink);box-shadow:none} .dogs-cta .btn-primary:hover{background:var(--albero-2)}
+  .dogs-example{background:#fff;border-radius:16px;padding:12px;color:var(--ink);display:grid;gap:10px} .dogs-example img{width:100%;height:220px;object-fit:cover;border-radius:12px} .dogs-example small{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.6;font-weight:800}
+  /* law */
+  .law-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:16px} @media(max-width:900px){.law-grid{grid-template-columns:1fr}}
+  .law-card{background:var(--indigo);color:#fff;border-radius:var(--radius);padding:20px;position:relative;overflow:hidden} .law-card blockquote{margin:12px 0 10px;font-family:EB Garamond;font-size:20px;line-height:1.35;font-style:italic;padding-left:16px;box-shadow:inset 3px 0 0 var(--albero)} .law-card cite{font-style:normal;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:700}
+  .precedent{background:#fff;border:1.5px solid var(--line-strong);border-radius:var(--radius);padding:16px;display:grid;gap:12px} .badge{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--albero);padding:6px 9px;border-radius:999px} .tl{display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:start} .tl b{font-size:12px;font-weight:800;color:var(--azulejo);background:var(--paper);border:1px solid var(--line);padding:6px 8px;border-radius:999px;text-align:center} .tl p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.55}
+  .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px} @media(max-width:700px){.share-grid{grid-template-columns:1fr}}
+  .share-card{background:#fff;border:1.5px solid var(--line-strong);border-radius:16px;padding:16px;display:flex;gap:12px;align-items:center} .share-card .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800;flex:0 0 42px} .ic-wa{background:#1FAF4E}.ic-tg{background:#2AABEE}.ic-x{background:var(--ink)}.ic-fb{background:#1877F2} .share-card a{margin-left:auto;font-weight:800;font-size:13px;text-decoration:none;background:var(--paper);border:1px solid var(--line-strong);padding:8px 12px;border-radius:999px}
+  .compartments{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} @media(max-width:900px){.compartments{grid-template-columns:1fr}} .comp{background:#fff;border:1.5px solid var(--line-strong);border-radius:16px;padding:16px;position:relative} .comp:before{content:"";position:absolute;top:0;left:16px;right:16px;height:4px;background:repeating-linear-gradient(90deg,var(--albero) 0 10px,transparent 10px 14px);opacity:.9;border-radius:999px} .comp h3{margin:10px 0 6px;font-family:Bricolage Grotesque;font-size:15px} .comp p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.6}
+  footer{margin-top:28px;background:var(--ink);color:#EAF0F6;padding:26px 20px} .foot{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr .9fr;gap:18px} @media(max-width:900px){.foot{grid-template-columns:1fr}} footer a{color:#fff} footer h4{margin:0 0 8px;font-family:Bricolage Grotesque;font-size:15px} footer ul{list-style:none;padding:0;margin:0;display:grid;gap:4px} .foot-bottom{max-width:1180px;margin:18px auto 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+  .sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:none;background:var(--teja);color:#fff;text-align:center;padding:14px 16px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 12px 30px rgba(196,60,42,.38);border:2px solid #fff} @media(max-width:700px){.sticky-cta{display:block} body{padding-bottom:72px}}
 </style>
 </head>
 <body>
-<!--
-THESIS: La petición como acto cívico festivo — firmar es ocupar la caseta. Rechaza el template hero-metric genérico.
-OWN-WORLD: Papel verjurado de bando + rayas albero/teja de caseta + azulejo indigo/sarga; EB Garamond para bando, Bricolage para pancarta, Manrope para lectura; sello vermellón, compartimentos ekiben.
-STORY: Visitante entiende en 5s que Bajamar 44 puede ser zona canina, ve que es legal (Ley 7/2023) y ganable (Aculadero 2024), y firma + comparte sin fricción.
-FIRST VIEWPORT: Tesis a izquierda (titular bando + lead + 2 CTAs), contador papel con dígitos y progreso a derecha, sticky en móvil; feria-stripe arriba.
-FORM: Bando en la Caseta — posición 7/7 grounded, seed cce5f0b3; donaciones: nixie (dígitos), ekiben (compartimentos).
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
--->
 <header class="top-bando" aria-label="Cabecera">
   <div class="top-bando-inner">
-    <a class="brand" href="#">
-      <div class="seal" aria-hidden="true">ZCV</div>
-      <div class="brand-text">
-        <b>ZonaCaninaVaporcito</b>
-        <span>El Puerto de Santa María · Bajamar 44</span>
-      </div>
-    </a>
-    <nav class="nav" aria-label="Principal">
-      <a href="#mapa">Mapa</a>
-      <a href="#pruebas">Pruebas</a>
-      <a href="https://c.org/TBtrVxzFjv" target="_blank" rel="noopener" class="cta-small">Firmar →</a>
-    </nav>
+    <a class="brand" href="#"><div class="seal">ZCV</div><div class="brand-text"><b>ZonaCaninaVaporcito</b><span>El Puerto de Santa María · donde estaba el Vaporcito</span></div></a>
+    <nav class="nav"><a href="#sitio">El sitio</a><a href="#perros">Tu perro</a><a href="https://c.org/TBtrVxzFjv" target="_blank" rel="noopener" class="cta-small">Firmar →</a></nav>
   </div>
   <div class="feria-stripe" aria-hidden="true"></div>
 </header>
-
 <main>
   <section class="hero" aria-labelledby="tit">
     <div>
       <span class="eyebrow"><i></i> Petición ciudadana · #ZonaCaninaVaporcito</span>
-      <h1 id="tit">Tu perro merece más que <em>una acera.</em><br> Bajamar 44 puede ser su parque.</h1>
+      <h1 id="tit">Tu perro merece más que <em>una acera.</em><br> Donde estaba el Vaporcito puede ser su parque.</h1>
       <p class="lead">El Puerto tiene ~9.000 hogares con perro y solo 2 zonas caninas dignas. La Ley 7/2023 obliga a los ayuntamientos a habilitar estos espacios. Ya lo conseguimos con la playa de El Aculadero en 2024 — ahora toca el Vaporcito.</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="https://c.org/TBtrVxzFjv" target="_blank" rel="noopener" aria-label="Firmar la petición en Change.org">✍️ Firmar la petición <span aria-hidden="true">→</span></a>
+        <a class="btn-primary" href="https://c.org/TBtrVxzFjv" target="_blank" rel="noopener">✍️ Firmar la petición →</a>
         <a class="btn-ghost" href="https://linktr.ee/zonacaninavaporcito" target="_blank" rel="noopener">Ver todos los enlaces</a>
       </div>
-      <div class="proof-mini" aria-label="Pruebas rápidas">
-        <span><s></s> Ley 7/2023</span>
-        <span><s></s> 88.000 habitantes</span>
-        <span><s></s> Aculadero 2024 lograda</span>
-        <span><s></s> @zonacaninavaporcito</span>
-      </div>
-      <p style="margin:12px 0 0; font-size:12px; color:var(--ink-2); line-height:1.5">Destinatario: <strong style="color:var(--ink)">D. Germán Beardo Caro</strong>, Alcalde de El Puerto. Petición en Change.org, gratuita y en 30 segundos.</p>
+      <div class="proof-mini"><span><s></s> Ley 7/2023</span><span><s></s> 88.000 habitantes</span><span><s></s> Aculadero 2024 lograda</span><span><s></s> @zonacaninavaporcito</span></div>
+      <p style="margin:12px 0 0;font-size:12px;color:var(--ink-2)">Destinatario: <strong style="color:var(--ink)">D. Germán Beardo Caro</strong>, Alcalde de El Puerto. Firma en 30 segundos en Change.org.</p>
     </div>
-
     <aside class="counter-card" aria-labelledby="cnt">
-      <div class="counter-head">
-        <strong id="cnt">Contador ciudadano</strong>
-        <em>Meta 1.000 firmas</em>
-      </div>
+      <div class="counter-head"><strong id="cnt">Contador ciudadano</strong><em>Meta 1.000 firmas</em></div>
       <div class="counter-body">
-        <div class="digits" aria-label="Firmas actuales 382">
-          <div class="digit"><b>0</b><i>mil</i></div>
-          <div class="digit"><b>3</b><i>cent</i></div>
-          <div class="digit"><b>8</b><i>dec</i></div>
-          <div class="digit"><b>2</b><i>unid</i></div>
-        </div>
+        <div class="digits" aria-label="382 firmas"><div class="digit"><b>0</b><i>mil</i></div><div class="digit"><b>3</b><i>cent</i></div><div class="digit"><b>8</b><i>dec</i></div><div class="digit"><b>2</b><i>unid</i></div></div>
         <div class="progress" aria-hidden="true"><div class="progress-bar" style="width:38%"></div></div>
-        <div style="display:flex; justify-content:space-between; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; opacity:.6; margin-top:6px"><span>0</span><span>382 — 38%</span><span>1.000</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-top:6px"><span>0</span><span>382 — 38%</span><span>1.000</span></div>
       </div>
       <div class="counter-foot">
-        <div class="mini-stats">
-          <div class="mini-stat"><b>11k–13k perros</b><span>estimados en el municipio</span></div>
-          <div class="mini-stat"><b>2.564 m²</b><span>Vino Fino — único referente reciente</span></div>
-        </div>
-        <p><strong>Cada firma es un metro.</strong> Cuando lleguemos a 1.000, pedimos audiencia en el Ayuntamiento con la asociación <em>Son Animales, Como Tú</em>.</p>
+        <div class="mini-stats"><div class="mini-stat"><b>11k–13k perros</b><span>estimados</span></div><div class="mini-stat"><b>2.564 m²</b><span>Vino Fino referente</span></div></div>
+        <p><strong>Cada firma es un metro.</strong> A las 1.000 pedimos audiencia con la asociación <em>Son Animales, Como Tú</em>.</p>
         <a class="btn-primary" style="justify-content:center" href="https://c.org/TBtrVxzFjv" target="_blank" rel="noopener">Firmar ahora — 30 seg</a>
-        <p style="font-size:11px; text-align:center; opacity:.7">También en <a href="https://c.org/djqGV9J6Ct" target="_blank" rel="noopener">c.org/djqGV9J6Ct</a> · <a href="https://maps.app.goo.gl/ihcDqp8yJGiKuq7H6" target="_blank" rel="noopener">Ver en Maps</a></p>
+        <p style="font-size:11px;text-align:center;opacity:.7">También en <a href="https://c.org/djqGV9J6Ct" target="_blank" rel="noopener">c.org/djqGV9J6Ct</a> · <a href="https://maps.app.goo.gl/ihcDqp8yJGiKuq7H6" target="_blank" rel="noopener">Ver en Maps</a></p>
       </div>
     </aside>
   </section>
 
-  <section class="section wrap" aria-labelledby="math">
-    <h2 id="math"><small>La matemática que duele</small> La cuenta no sale.</h2>
-    <p class="kicker">No es una sensación. Son números del municipio y del BOE. Sin parque cercano, la ordenanza te deja sin opción legal: correa <2m siempre o privar al perro de correr.</p>
-    <div class="math-grid">
-      <article class="math-card">
-        <div class="math-icon" aria-hidden="true">🐾</div>
-        <div><span class="tag">Hogares con perro · 26%</span><b>~9.100 hogares</b><p>De ~35.000 hogares. Entre 11.000 y 13.000 perros en El Puerto. Barrio sin zona canina = desplazamiento de kilómetros.</p></div>
-      </article>
-      <article class="math-card">
-        <div class="math-icon" aria-hidden="true">📐</div>
-        <div><span class="tag">Red actual · insuficiente</span><b>2–3 operativas</b><p>Valdelagrana, Vino Fino y Toruños (periurbano). Altos del Paseo y Arboleda Perdida aún en obras a marzo 2026.</p></div>
-      </article>
-      <article class="math-card">
-        <div class="math-icon" aria-hidden="true">⚖️</div>
-        <div><span class="tag">Obligación legal</span><b>Ley 7/2023, art. 24</b><p>“Los municipios habilitarán en todo caso lugares específicamente habilitados para el esparcimiento canino.” No es favor, es deber.</p></div>
-      </article>
+  <section id="sitio" class="section wrap">
+    <h2><small>El sitio — fotos reales</small> Así está hoy donde estaba el Vaporcito.</h2>
+    <p class="kicker">Sin renders ni IA. Fotos del propio espacio que pedimos recuperar como zona canina vallada — con sombra, césped y fuente, como Vino Fino.</p>
+    <div class="gallery">
+      <div class="gallery-main">
+        <div class="gallery-head"><strong>Donde estaba el Vaporcito</strong><a href="https://maps.app.goo.gl/ihcDqp8yJGiKuq7H6" target="_blank" rel="noopener" style="font-size:13px;font-weight:800;color:var(--indigo)">Ver en Maps →</a></div>
+        <div class="gallery-grid">
+          <img src="assets/vista1.jpg" alt="Vista del terreno donde estaba el Vaporcito — zona amplia sin habilitar" loading="lazy">
+          <img src="assets/vista2.jpg" alt="Vista lateral del espacio Vaporcito con entorno urbano" loading="lazy">
+          <img src="assets/vista3.jpg" alt="Panorámica del solar del Vaporcito" loading="lazy">
+          <img src="assets/vista5.jpg" alt="Detalle del espacio Vaporcito" loading="lazy">
+          <img src="assets/vista-primavera.jpg" alt="Vista primaveral del entorno del Vaporcito" loading="lazy" class="wide">
+        </div>
+        <p style="padding:8px 16px 14px;margin:0;font-size:12px;color:var(--ink-2)">Fotos reales del sitio. No hay fotomontaje: esto es lo que hay y lo que proponemos transformar. Fuente: archivo campaña 2026.</p>
+      </div>
+      <div class="detail-stack">
+        <div class="detail-card"><h3>Por qué aquí</h3><p>Espacio reconocible, bien comunicado y sin uso digno. Vallado, sombra, césped y fuente — estándar municipal ya probado en Vino Fino — lo devuelve a la ciudadanía y a sus perros.</p><ul><li>Vallado y césped con mantenimiento presupuestado</li><li>Acceso a pie sin coche para el entorno</li><li>Sin obra faraónica: re aprovechar lo existente</li></ul></div>
+        <div class="detail-card" style="background:var(--cream-2)"><div class="azulejo-strip" aria-hidden="true"></div><h3 style="margin-top:12px">Qué pedimos</h3><ul><li>Ejecutar Altos del Paseo y Arboleda Perdida en plazo</li><li>Plan Municipal de Parques Caninos por barrios</li><li>Proceso participativo con asociaciones</li><li>Informe anual Ley 7/2023</li></ul></div>
+      </div>
     </div>
   </section>
 
-  <section id="mapa" class="section wrap">
-    <div class="map-layout">
-      <div class="map-card">
-        <div class="map-embed">
-          <iframe title="Mapa Avenida Bajamar 44 — Vaporcito" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Avenida+Bajamar+44,+El+Puerto+de+Santa+Mar%C3%ADa&z=16&output=embed"></iframe>
-          <div class="map-pin" aria-hidden="true">📍 Bajamar 44 — Vaporcito</div>
-        </div>
-        <div class="map-caption">
-          <strong>Avenida Bajamar 44 — donde estaba el Vaporcito</strong>
-          <a href="https://maps.app.goo.gl/ihcDqp8yJGiKuq7H6" target="_blank" rel="noopener">Abrir en Google Maps →</a>
-        </div>
+  <section id="perros" class="section wrap">
+    <div class="dogs-cta">
+      <div>
+        <h2><small style="color:var(--albero);letter-spacing:.16em;text-transform:uppercase;font-size:11px;font-weight:800;display:block;margin-bottom:6px">Protagonistas reales</small> Manda la foto de tu perro y le hacemos su cuento.</h2>
+        <p>Queremos llenar la campaña de caras reales. <strong style="color:#fff">Envía una foto de tu perro con su nombre</strong> a <a href="mailto:zonacaninavaporcito@gmail.com?subject=Foto%20de%20mi%20perro%20para%20ZonaCaninaVaporcito&body=Hola%2C%20soy%20___%20y%20mi%20perro%20se%20llama%20___%20.%20Adjunto%20su%20foto%20para%20el%20cuento." style="color:var(--albero)">zonacaninavaporcito@gmail.com</a> y lo convertimos en una historia como las de la carpeta <em>viral</em> — ejemplo: vídeos verticales con su nombre, su barrio y su sueño de correr libre donde estaba el Vaporcito.</p>
+        <p style="font-size:12px;opacity:.85">Autorizas su uso en TikTok/Reels/Shorts de @zonacaninavaporcito. Si es menor el dueño, que escriba un adulto. Máx. 1 foto por perro, horizontal o vertical.</p>
+        <a class="btn-primary" href="mailto:zonacaninavaporcito@gmail.com?subject=Foto%20de%20mi%20perro%20para%20ZonaCaninaVaporcito&body=Hola%2C%20soy%20___%20y%20mi%20perro%20se%20llama%20___%20.%20Adjunto%20su%20foto.">📧 Enviar foto a zonacaninavaporcito@gmail.com</a>
+        <p style="margin-top:10px;font-size:12px;opacity:.9"><a href="https://linktr.ee/zonacaninavaporcito" target="_blank" rel="noopener" style="color:var(--albero);font-weight:700">Ver ejemplos en @zonacaninavaporcito →</a> &nbsp; Carpeta <code>viral/</code> con 1.mp4 y Vertical_video como referencia.</p>
       </div>
-      <div class="detail-stack">
-        <div class="detail-card">
-          <h3>Por qué aquí</h3>
-          <p>Espacio reconocible, bien comunicado y sin uso digno actual. Recuperarlo como zona canina vallada con bancos, papeleras, dispensadores y fuente — como Vino Fino — devuelve el lugar a la ciudadanía y a sus perros.</p>
-          <ul>
-            <li>Vallado, sombra y césped — estándar municipal ya probado</li>
-            <li>Acceso a pie para casco histórico y Bajamar sin coche</li>
-            <li>Mantenimiento con dotación presupuestaria específica</li>
-          </ul>
-        </div>
-        <div class="detail-card" style="background:var(--cream-2)">
-          <div class="azulejo-strip" aria-hidden="true"></div>
-          <h3 style="margin-top:12px">Qué pedimos exactamente</h3>
-          <ul>
-            <li>Ejecutar Altos del Paseo y Arboleda Perdida en plazo</li>
-            <li>Plan Municipal de Parques Caninos por barrios</li>
-            <li>Proceso participativo con asociaciones</li>
-            <li>Informe anual de cumplimiento Ley 7/2023</li>
-          </ul>
-        </div>
+      <div class="dogs-example">
+        <small>Ejemplo — formato historia</small>
+        <img src="assets/vista-primavera.jpg" alt="Ejemplo de historia con foto de perro — placeholder con paisaje primaveral" loading="lazy">
+        <p style="margin:0;font-size:13px;line-height:1.5"><strong>“Luna, 3 años — Barrio Bajamar”</strong><br><span style="color:var(--ink-2)">“Sueño con correr sin correa donde estaba el Vaporcito. Mi dueña firma por mí. ¿Y tú?”</span> — así quedará tu cuento vertical 9:16 con tu foto, nombre y barrio.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="math">
+    <h2 id="math"><small>La matemática que duele</small> La cuenta no sale.</h2>
+    <p class="kicker">Son números del municipio y del BOE. Sin parque cercano, la ordenanza te deja sin opción: correa &lt;2m siempre o privar al perro de correr.</p>
+    <div class="math-grid">
+      <article class="math-card"><div class="math-icon">🐾</div><div><span class="tag">Hogares con perro · 26%</span><b>~9.100 hogares</b><p>De ~35.000 hogares. 11.000–13.000 perros en El Puerto. Sin zona canina = kilómetros a pie.</p></div></article>
+      <article class="math-card"><div class="math-icon">📐</div><div><span class="tag">Red actual · insuficiente</span><b>2–3 operativas</b><p>Valdelagrana, Vino Fino y Toruños (periurbano). Altos del Paseo y Arboleda Perdida aún en obras.</p></div></article>
+      <article class="math-card"><div class="math-icon">⚖️</div><div><span class="tag">Obligación legal</span><b>Ley 7/2023</b><p>“Los municipios habilitarán en todo caso lugares específicamente habilitados…” No es favor, es deber.</p></div></article>
     </div>
   </section>
 
   <section id="pruebas" class="section wrap">
     <div class="law-grid">
-      <div class="law-card">
-        <small style="letter-spacing:.16em; text-transform:uppercase; font-weight:800; opacity:.85; font-size:11px">Prueba legal</small>
-        <blockquote>“Los municipios determinarán en todo caso lugares específicamente habilitados para el esparcimiento de animales de compañía, particularmente los de la especie canina.”</blockquote>
-        <cite>Ley 7/2023, de 28 de marzo, de Protección de los Derechos y el Bienestar de los Animales — BOE</cite>
-        <p style="margin:14px 0 0; font-size:13px; opacity:.9">Ordenanza municipal: correa &lt;2m obligatoria en vía pública. Sin parque, o incumples o privas al perro.</p>
-        <p style="margin:10px 0 0"><a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-7936" target="_blank" rel="noopener" style="color:var(--albero); font-weight:800">Leer en BOE →</a> &nbsp; <a href="https://www.elpuertodesantamaria.es/pub/bandos/ordmun/2015/ord_mun_animales.pdf" target="_blank" rel="noopener" style="color:#fff; opacity:.9; font-weight:700; text-decoration:underline; text-underline-offset:3px">Ordenanza PDF</a></p>
-      </div>
-      <div class="precedent">
-        <div class="precedent-head">
-          <span class="badge">Precedente ganado</span>
-          <p style="margin:0; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; opacity:.6">La presión funciona aquí</p>
-        </div>
-        <h3>Playa de El Aculadero — de petición a playa canina</h3>
-        <p style="margin:0; font-size:13px; color:var(--ink-2)">Petición en Change.org → <strong style="color:var(--ink)">9.000 m² habilitados el 1 de junio de 2024</strong>. Temporada oct–may. Mismo Ayuntamiento, misma vía.</p>
-        <div class="timeline">
-          <div class="tl"><b>2023</b><p>Petición ciudadana “playa para perros” supera apoyos locales</p></div>
-          <div class="tl"><b>2024</b><p>Ayuntamiento habilita El Aculadero entre espigón de La Puntilla y escollera</p></div>
-          <div class="tl"><b>2026</b><p>Turno de Bajamar 44. Mismo mecanismo: firmas + visibilidad + diálogo</p></div>
-        </div>
-        <a href="https://www.change.org/p/alcalde-de-el-puerto-de-santa-mar%C3%ADa-habilitar-una-zona-de-playa-para-perros-en-el-puerto-de-santa-mar%C3%ADa-c%C3%A1diz" target="_blank" rel="noopener" style="font-size:13px; font-weight:800; color:var(--indigo)">Ver petición original →</a>
-      </div>
+      <div class="law-card"><small style="letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.85;font-size:11px">Prueba legal</small><blockquote>“Los municipios determinarán en todo caso lugares específicamente habilitados para el esparcimiento de animales de compañía, particularmente los de la especie canina.”</blockquote><cite>Ley 7/2023, de 28 de marzo — BOE</cite><p style="margin:14px 0 0;font-size:13px;opacity:.9">Ordenanza: correa &lt;2m obligatoria. Sin parque, incumples o privas al perro.</p><p style="margin:10px 0 0"><a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-7936" target="_blank" rel="noopener" style="color:var(--albero);font-weight:800">Leer en BOE →</a> &nbsp; <a href="https://www.elpuertodesantamaria.es/pub/bandos/ordmun/2015/ord_mun_animales.pdf" target="_blank" rel="noopener" style="color:#fff;opacity:.9;font-weight:700;text-decoration:underline">Ordenanza PDF</a></p></div>
+      <div class="precedent"><div style="display:flex;gap:12px;align-items:center"><span class="badge">Precedente ganado</span><p style="margin:0;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.6">La presión funciona aquí</p></div><h3 style="margin:0;font-family:Bricolage Grotesque;font-size:18px">Playa de El Aculadero — de petición a playa canina</h3><p style="margin:0;font-size:13px;color:var(--ink-2)">Petición Change.org → <strong style="color:var(--ink)">9.000 m² habilitados 01-06-2024</strong>. Temporada oct–may. Mismo Ayuntamiento, misma vía.</p><div style="display:grid;gap:10px"><div class="tl"><b>2023</b><p>Petición “playa para perros” supera apoyos</p></div><div class="tl"><b>2024</b><p>Habilita El Aculadero entre espigón y escollera</p></div><div class="tl"><b>2026</b><p>Turno de donde estaba el Vaporcito — mismo mecanismo</p></div></div><a href="https://www.change.org/p/alcalde-de-el-puerto-de-santa-mar%C3%ADa-habilitar-una-zona-de-playa-para-perros-en-el-puerto-de-santa-mar%C3%ADa-c%C3%A1diz" target="_blank" rel="noopener" style="font-size:13px;font-weight:800;color:var(--indigo)">Ver petición original →</a></div>
     </div>
   </section>
 
   <section class="section wrap" aria-labelledby="share">
     <h2 id="share"><small>Difusión en 5 segundos</small> Firmar dura 30 segundos. Compartir, 5.</h2>
-    <p class="kicker">La campaña vive en vertical: TikTok, Reels y Shorts. Esta landing es el aterrizaje para quien duda si “esto sirve de algo”. Sí sirve — ya sirvió.</p>
+    <p class="kicker">Vive en vertical: TikTok, Reels y Shorts. Esta landing es para quien duda si sirve. Sí sirve — ya sirvió.</p>
     <div class="share-grid">
-      <article class="share-card">
-        <div class="ic ic-wa">WA</div>
-        <div><strong>WhatsApp</strong><span>Mensaje listo para vecinos</span></div>
-        <a href="https://wa.me/?text=%F0%9F%90%BE%20%C2%BFTienes%20perro%20en%20El%20Puerto%3F%20Firma%20para%20la%20zona%20canina%20en%20Bajamar%2044%20(Vaporcito)%20%F0%9F%91%89%20https%3A%2F%2Fc.org%2FTBtrVxzFjv" target="_blank" rel="noopener">Compartir</a>
-      </article>
-      <article class="share-card">
-        <div class="ic ic-tg">TG</div>
-        <div><strong>Telegram</strong><span>Reenvío en un toque</span></div>
-        <a href="https://t.me/share/url?url=https%3A%2F%2Fc.org%2FTBtrVxzFjv&text=%F0%9F%90%BE%20ZonaCaninaVaporcito%20%E2%80%94%20El%20Puerto%20necesita%20su%20parque%20canino" target="_blank" rel="noopener">Compartir</a>
-      </article>
-      <article class="share-card">
-        <div class="ic ic-x">X</div>
-        <div><strong>X / Twitter</strong><span>Hilo + etiqueta al Ayuntamiento</span></div>
-        <a href="https://twitter.com/intent/tweet?text=El%20Puerto%20tiene%20miles%20de%20perros%20y%20casi%20ning%C3%BAn%20sitio%20donde%20corran%20libres.%20Firma%20para%20Bajamar%2044%20%F0%9F%90%BE%20https%3A%2F%2Fc.org%2FTBtrVxzFjv%20%23ZonaCaninaVaporcito" target="_blank" rel="noopener">Tuitear</a>
-      </article>
-      <article class="share-card">
-        <div class="ic ic-fb">f</div>
-        <div><strong>Facebook</strong><span>Grupos vecinales y de mascotas</span></div>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fc.org%2FTBtrVxzFjv" target="_blank" rel="noopener">Compartir</a>
-      </article>
+      <article class="share-card"><div class="ic ic-wa">WA</div><div><strong>WhatsApp</strong><span>Mensaje listo</span></div><a href="https://wa.me/?text=%F0%9F%90%BE%20%C2%BFTienes%20perro%20en%20El%20Puerto%3F%20Firma%20para%20la%20zona%20canina%20donde%20estaba%20el%20Vaporcito%20%F0%9F%91%89%20https%3A%2F%2Fc.org%2FTBtrVxzFjv" target="_blank" rel="noopener">Compartir</a></article>
+      <article class="share-card"><div class="ic ic-tg">TG</div><div><strong>Telegram</strong><span>Reenvío</span></div><a href="https://t.me/share/url?url=https%3A%2F%2Fc.org%2FTBtrVxzFjv&text=%F0%9F%90%BE%20ZonaCaninaVaporcito" target="_blank" rel="noopener">Compartir</a></article>
+      <article class="share-card"><div class="ic ic-x">X</div><div><strong>X / Twitter</strong><span>Hilo + Ayuntamiento</span></div><a href="https://twitter.com/intent/tweet?text=El%20Puerto%20tiene%20miles%20de%20perros%20y%20casi%20ning%C3%BAn%20sitio%20donde%20corran%20libres.%20Firma%20para%20donde%20estaba%20el%20Vaporcito%20%F0%9F%90%BE%20https%3A%2F%2Fc.org%2FTBtrVxzFjv%20%23ZonaCaninaVaporcito" target="_blank" rel="noopener">Tuitear</a></article>
+      <article class="share-card"><div class="ic ic-fb">f</div><div><strong>Facebook</strong><span>Grupos vecinales</span></div><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fc.org%2FTBtrVxzFjv" target="_blank" rel="noopener">Compartir</a></article>
     </div>
-    <p style="margin:12px 0 0; font-size:12px; color:var(--ink-2)">Atajo: copia <code style="background:#fff; border:1px solid var(--line); padding:2px 6px; border-radius:6px">https://c.org/TBtrVxzFjv</code> · Handle universal <strong>@zonacaninavaporcito</strong> en TikTok · Instagram · YouTube · X · Facebook — <a href="https://linktr.ee/zonacaninavaporcito" target="_blank" rel="noopener" style="font-weight:800; color:var(--indigo)">linktr.ee/zonacaninavaporcito</a></p>
+    <p style="margin:12px 0 0;font-size:12px;color:var(--ink-2)">Copia <code style="background:#fff;border:1px solid var(--line);padding:2px 6px;border-radius:6px">https://c.org/TBtrVxzFjv</code> · <strong>@zonacaninavaporcito</strong> — <a href="https://linktr.ee/zonacaninavaporcito" target="_blank" rel="noopener" style="font-weight:800;color:var(--indigo)">linktr.ee/zonacaninavaporcito</a> · <a href="mailto:zonacaninavaporcito@gmail.com" style="font-weight:800;color:var(--indigo)">zonacaninavaporcito@gmail.com</a></p>
   </section>
 
-  <section class="section wrap">
-    <div class="compartments">
-      <article class="comp">
-        <h3>Sin humo, con fuentes</h3>
-        <p>Datos de ANFAAC, BOE y notas del Ayuntamiento. Nada inventado. Si falta una foto real del Vaporcito, lo marcamos como pendiente — no la inventamos con IA.</p>
-      </article>
-      <article class="comp">
-        <h3>Tono: indignación tranquila</h3>
-        <p>Humor local + esperanza. “El perro con más espacio es el parking del Mercadona” duele y se comparte, pero sin atacar a nadie. El orgullo portuense hace el resto.</p>
-      </article>
-      <article class="comp">
-        <h3>Para toda la comunidad</h3>
-        <p>Un parque canino no es solo para quien tiene perro: reduce conflictos, fomenta vida activa y crea vecindad. Inversión en salud pública y cohesión.</p>
-      </article>
-    </div>
-  </section>
+  <section class="section wrap"><div class="compartments"><article class="comp"><h3>Sin humo, con fotos reales</h3><p>Datos ANFAAC/BOE/Ayuntamiento + fotos del propio sitio. Nada inventado; lo que falta se marca como pendiente.</p></article><article class="comp"><h3>Tono: indignación tranquila</h3><p>Humor local + esperanza. Sin atacar. El orgullo portuense hace el resto.</p></article><article class="comp"><h3>Para toda la comunidad</h3><p>Reduce conflictos, fomenta vida activa y crea vecindad. Inversión en salud y cohesión.</p></article></div></section>
 </main>
-
 <footer>
-  <div class="foot">
-    <div>
-      <h4>ZonaCaninaVaporcito</h4>
-      <p>Campaña ciudadana vecinal por una zona canina en <strong>Avenida Bajamar 44</strong> y una red equitativa por barrios. Con el apoyo de la asociación <em>Son Animales, Como Tú</em>.</p>
-      <p><a href="https://c.org/TBtrVxzFjv" target="_blank" rel="noopener">c.org/TBtrVxzFjv</a> · <a href="https://c.org/djqGV9J6Ct" target="_blank" rel="noopener">c.org/djqGV9J6Ct</a><br>
-      <a href="https://linktr.ee/zonacaninavaporcito" target="_blank" rel="noopener">linktr.ee/zonacaninavaporcito</a></p>
-    </div>
-    <div>
-      <h4>Contacto</h4>
-      <ul>
-        <li>TikTok / Instagram / YouTube: <strong>@zonacaninavaporcito</strong></li>
-        <li>Maps: <a href="https://maps.app.goo.gl/ihcDqp8yJGiKuq7H6" target="_blank" rel="noopener">Bajamar 44</a></li>
-        <li>Prensa: vía redes y Change.org</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Transparencia</h4>
-      <ul>
-        <li><a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-7936" target="_blank" rel="noopener">BOE Ley 7/2023</a></li>
-        <li><a href="https://www.elpuertodesantamaria.es/pub/bandos/ordmun/2015/ord_mun_animales.pdf" target="_blank" rel="noopener">Ordenanza animales (PDF)</a></li>
-        <li><a href="https://www.elpuertodesantamaria.es/el-ayuntamiento-de-el-puerto-inicia-las-obras-de-un-nuevo-parque-canino-en-altos-del-paseo" target="_blank" rel="noopener">Nota Altos del Paseo</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    <span>© 2026 ZonaCaninaVaporcito · Vecinos de El Puerto · No oficial del Ayuntamiento</span>
-    <span>Hecho para GitHub Pages · Sin tracking · <a href="#" style="color:#fff">Subir ↑</a></span>
-  </div>
+  <div class="foot"><div><h4>ZonaCaninaVaporcito</h4><p>Campaña vecinal por una zona canina <strong>donde estaba el Vaporcito</strong> y red por barrios. Con <em>Son Animales, Como Tú</em>.</p><p><a href="https://c.org/TBtrVxzFjv" target="_blank" rel="noopener">c.org/TBtrVxzFjv</a> · <a href="mailto:zonacaninavaporcito@gmail.com">zonacaninavaporcito@gmail.com</a><br><a href="https://linktr.ee/zonacaninavaporcito" target="_blank" rel="noopener">linktr.ee/zonacaninavaporcito</a></p></div><div><h4>Contacto</h4><ul><li>TikTok/Instagram/YouTube: <strong>@zonacaninavaporcito</strong></li><li>Email fotos: <a href="mailto:zonacaninavaporcito@gmail.com">zonacaninavaporcito@gmail.com</a></li><li>Maps: <a href="https://maps.app.goo.gl/ihcDqp8yJGiKuq7H6" target="_blank" rel="noopener">donde estaba el Vaporcito</a></li></ul></div><div><h4>Transparencia</h4><ul><li><a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2023-7936" target="_blank" rel="noopener">BOE Ley 7/2023</a></li><li><a href="https://www.elpuertodesantamaria.es/pub/bandos/ordmun/2015/ord_mun_animales.pdf" target="_blank" rel="noopener">Ordenanza (PDF)</a></li></ul></div></div>
+  <div class="foot-bottom"><span>© 2026 ZonaCaninaVaporcito · Vecinos de El Puerto</span><span>Hecho para GitHub Pages · <a href="#" style="color:#fff">Subir ↑</a></span></div>
 </footer>
-
-<a class="sticky-cta" href="https://c.org/TBtrVxzFjv" target="_blank" rel="noopener">✍️ Firmar la petición →</a>
-
-<script>
-// contador fake animado sutil — respeta prefers-reduced-motion
-const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!prefersReduced){
-  const bar = document.querySelector('.progress-bar');
-  if(bar){
-    bar.animate([{width:'0%'},{width:'38%'}], {duration:900, easing:'cubic-bezier(.16,1,.3,1)', fill:'forwards'});
-  }
-}
-// cifra tabular: nada que hacer, ya es tabular por fuente
-</script>
+<a class="sticky-cta" href="https://c.org/TBtrVxzFjv" target="_blank" rel="noopener">✍️ Firmar →</a>
+<script>const r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!r){const b=document.querySelector('.progress-bar');if(b)b.animate([{width:'0%'},{width:'38%'}],{duration:900,easing:'cubic-bezier(.16,1,.3,1)',fill:'forwards'})}</script>
 </body>
 </html>
