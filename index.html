@@ -153,27 +153,27 @@
       </div>
       <div class="dogs-example">
         <small>Carrusel — playlist YouTube @ZonaCaninaVaporcito</small>
-        <div id="yt-player-wrap" style="position:relative;aspect-ratio:9/16;max-height:420px;background:#000;border-radius:12px;overflow:hidden">
-          <iframe id="yt-player" title="Historias ZonaCaninaVaporcito — playlist" src="https://www.youtube.com/embed/videoseries?list=UUCD_eqJjcMfRVg489xzx5LFA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+        <div id="yt-player-wrap" style="position:relative;aspect-ratio:16/9;max-height:420px;background:#000;border-radius:12px;overflow:hidden">
+          <iframe id="yt-player" title="Historias ZonaCaninaVaporcito — playlist PLISaY0oQ5et4" src="https://www.youtube.com/embed/videoseries?list=PLISaY0oQ5et4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
         </div>
         <div id="yt-carousel" style="display:flex;gap:8px;overflow-x:auto;padding:8px 0 4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch"></div>
-        <p style="margin:4px 0 0;font-size:11px;color:var(--ink-2)">Playlist: subidas de <a href="https://www.youtube.com/@ZonaCaninaVaporcito" target="_blank" rel="noopener" style="font-weight:700;color:var(--indigo)">@ZonaCaninaVaporcito</a> (ID canal UCD_eqJjcMfRVg489xzx5LFA → lista UU…). Cambia <code>PLAYLIST_ID</code> en el código para otra lista. Flechas: desliza o usa ← →.</p>
+        <p style="margin:4px 0 0;font-size:11px;color:var(--ink-2)">Playlist: <a href="https://www.youtube.com/playlist?list=PLISaY0oQ5et4" target="_blank" rel="noopener" style="font-weight:700;color:var(--indigo)">PLISaY0oQ5et4</a> — portadas de cada vídeo. Invita a ver: “toca la portada para reproducir”.</p>
         <details style="margin-top:8px;background:var(--cream-2);border:1px solid var(--line);border-radius:10px;padding:8px 10px"><summary style="font-size:12px;font-weight:800;cursor:pointer">Ver ejemplo local (fallback) — viral/con final/Ejemplo — formato histori.mp4</summary>
           <video controls playsinline poster="assets/vista-primavera.jpg" preload="metadata" style="width:100%;border-radius:10px;margin-top:8px;background:#000" aria-label="Ejemplo local historia vertical">
             <source src="assets/ejemplo-historia.mp4" type="video/mp4">
           </video>
           <p style="margin:6px 0 0;font-size:12px;color:var(--ink-2)"><strong>“Luna, 3 años”</strong> — tu cuento queda vertical 9:16 con tu foto, nombre y barrio. Envía a <a href="mailto:zonacaninavaporcito@gmail.com">zonacaninavaporcito@gmail.com</a>.</p>
         </details>
-        <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"ZonaCaninaVaporcito — Historias en YouTube","itemListElement":[{"@type":"ListItem","position":1,"url":"https://www.youtube.com/playlist?list=UUCD_eqJjcMfRVg489xzx5LFA"}]}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"ZonaCaninaVaporcito — Historias en YouTube","itemListElement":[{"@type":"ListItem","position":1,"url":"https://www.youtube.com/playlist?list=PLISaY0oQ5et4"}]}</script>
         <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"ZonaCaninaVaporcito — Ejemplo historia vertical","description":"Ejemplo de cuento vertical 9:16 con foto de perro, nombre y barrio para la campaña donde estaba el Vaporcito. Envía tu foto a zonacaninavaporcito@gmail.com.","thumbnailUrl":"https://zonacaninavaporcito.github.io/assets/vista-primavera.jpg","uploadDate":"2026-08-28","contentUrl":"https://zonacaninavaporcito.github.io/assets/ejemplo-historia.mp4","embedUrl":"https://zonacaninavaporcito.github.io/#perros","duration":"PT30S","publisher":{"@type":"Organization","name":"ZonaCaninaVaporcito","logo":{"@type":"ImageObject","url":"https://zonacaninavaporcito.github.io/assets/logo.png"}}}</script>
         <script>
         (function(){
-          const PLAYLIST_ID = 'UUCD_eqJjcMfRVg489xzx5LFA'; // cambia a PL... para playlist custom
+          const PLAYLIST_ID = 'PLISaY0oQ5et4'; // tu playlist https://www.youtube.com/watch?v=30pT91oX290&list=PLISaY0oQ5et4
           const CHANNEL_ID = 'UCD_eqJjcMfRVg489xzx5LFA';
           const player = document.getElementById('yt-player');
           const carousel = document.getElementById('yt-carousel');
-          // Intenta cargar carrusel de miniaturas desde RSS (sin API key) para AEO/SEO
-          const rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
+          // Carrusel de portadas de la playlist solicitada — RSS sin API key para AEO/SEO
+          const rssUrl = 'https://www.youtube.com/feeds/videos.xml?playlist_id=' + PLAYLIST_ID;
           const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
           fetch(proxy).then(r=>r.json()).then(j=>{
             const xml = j.contents;
