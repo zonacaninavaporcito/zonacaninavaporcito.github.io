@@ -170,38 +170,42 @@
         <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"ZonaCaninaVaporcito — Ejemplo historia vertical","description":"Ejemplo de cuento vertical 9:16 con foto de perro, nombre y barrio para la campaña donde estaba el Vaporcito. Envía tu foto a zonacaninavaporcito@gmail.com.","thumbnailUrl":"https://zonacaninavaporcito.github.io/assets/vista-primavera.jpg","uploadDate":"2026-08-28","contentUrl":"https://zonacaninavaporcito.github.io/assets/ejemplo-historia.mp4","embedUrl":"https://zonacaninavaporcito.github.io/#perros","duration":"PT30S","publisher":{"@type":"Organization","name":"ZonaCaninaVaporcito","logo":{"@type":"ImageObject","url":"https://zonacaninavaporcito.github.io/assets/logo.png"}}}</script>
         <script>
         (function(){
-          const PLAYLIST_ID = 'PLISaY0oQ5et4'; // tu playlist https://www.youtube.com/watch?v=30pT91oX290&list=PLISaY0oQ5et4
-          const CHANNEL_ID = 'UCD_eqJjcMfRVg489xzx5LFA';
+          const PLAYLIST_ID = 'PLISaY0oQ5et4';
           const player = document.getElementById('yt-player');
           const carousel = document.getElementById('yt-carousel');
-          // Carrusel de portadas de la playlist solicitada — RSS sin API key para AEO/SEO
-          const rssUrl = 'https://www.youtube.com/feeds/videos.xml?playlist_id=' + PLAYLIST_ID;
-          const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
-          fetch(proxy).then(r=>r.json()).then(j=>{
-            const xml = j.contents;
-            const ids = [...xml.matchAll(/<yt:videoId>([^<]+)<\/yt:videoId>/g)].map(m=>m[1]).slice(0,12);
-            const titles = [...xml.matchAll(/<title>([^<]+)<\/title>/g)].map(m=>m[1]).slice(1,13);
-            if(!ids.length) throw new Error('no ids');
-            carousel.innerHTML = ids.map((id,i)=>`
-              <button data-id="${id}" aria-label="${(titles[i]||'Vídeo').replace(/"/g,'')}" style="flex:0 0 92px;scroll-snap-align:start;border:1.5px solid var(--line-strong);border-radius:12px;overflow:hidden;background:#fff;padding:0;cursor:pointer">
-                <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="" width="92" height="164" style="width:100%;height:92px;object-fit:cover;display:block;aspect-ratio:9/16;object-position:center">
-                <span style="display:block;font-size:10px;font-weight:700;line-height:1.3;padding:5px 6px 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(titles[i]||'Historia').slice(0,22)}</span>
+          // Fallback inmediato — 2 vídeos verificados de tu playlist (para que siempre se vea algo)
+          const fallback = [
+            {id:'30pT91oX290', title:'Vídeo para Perrita Mikaela 🍊🐾'},
+            {id:'vxBbvuGAK8c', title:'El parque de los deseos marinero'}
+          ];
+          function render(ids){
+            carousel.innerHTML = ids.map(o=>`
+              <button data-id="${o.id}" aria-label="${o.title.replace(/"/g,'')}" style="flex:0 0 92px;scroll-snap-align:start;border:1.5px solid var(--line-strong);border-radius:12px;overflow:hidden;background:#fff;padding:0;cursor:pointer">
+                <img src="https://img.youtube.com/vi/${o.id}/hqdefault.jpg" alt="" width="92" height="164" style="width:100%;height:92px;object-fit:cover;display:block;aspect-ratio:9/16;object-position:center">
+                <span style="display:block;font-size:10px;font-weight:700;line-height:1.3;padding:5px 6px 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${o.title.slice(0,22)}</span>
               </button>
             `).join('');
             carousel.querySelectorAll('button').forEach(btn=>{
               btn.addEventListener('click',()=>{
-                const id = btn.getAttribute('data-id');
-                player.src = 'https://www.youtube.com/embed/' + id + '?rel=0&autoplay=1';
+                player.src = 'https://www.youtube.com/embed/' + btn.getAttribute('data-id') + '?rel=0&autoplay=1';
                 carousel.querySelectorAll('button').forEach(b=>b.style.outline='');
                 btn.style.outline='3px solid var(--albero)';
               });
             });
-            // primera selección
             if(carousel.firstElementChild) carousel.firstElementChild.style.outline='3px solid var(--albero)';
-          }).catch(()=>{
-            // fallback: muestra 3 miniaturas genéricas que abren la playlist
-            carousel.innerHTML = '<p style="font-size:12px;color:var(--ink-2);padding:8px">No se pudo cargar miniaturas. Usa el player de arriba — es tu playlist completa.</p>';
-          });
+          }
+          render(fallback);
+          // Intenta enriquecer desde RSS (sin API key) — si hay más vídeos, reemplaza
+          const rssUrl = 'https://www.youtube.com/feeds/videos.xml?playlist_id=' + PLAYLIST_ID;
+          const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
+          fetch(proxy).then(r=>r.json()).then(j=>{
+            const xml = j.contents || '';
+            const ids = [...xml.matchAll(/<yt:videoId>([^<]+)<\/yt:videoId>/g)].map(m=>m[1]);
+            const titles = [...xml.matchAll(/<title>([^<]+)<\/title>/g)].map(m=>m[1]).slice(1);
+            if(ids.length > fallback.length){
+              render(ids.map((id,i)=>({id, title: titles[i]||'Historia '+(i+1)})));
+            }
+          }).catch(()=>{});
         })();
         </script>
       </div>
