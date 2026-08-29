@@ -152,13 +152,56 @@
         <p style="margin-top:10px;font-size:12px;opacity:.9"><a href="https://linktr.ee/zonacaninavaporcito" target="_blank" rel="noopener" style="color:var(--albero);font-weight:700">Ver ejemplos en @zonacaninavaporcito →</a> &nbsp; Carpeta <code>viral/</code> con 1.mp4 y Vertical_video como referencia.</p>
       </div>
       <div class="dogs-example">
-        <small>Ejemplo — formato historia (video real)</small>
-        <video controls playsinline poster="assets/vista-primavera.jpg" preload="metadata" style="width:100%;border-radius:12px;display:block;background:#000" aria-label="Ejemplo historia vertical — formato cuento con foto de perro">
-          <source src="assets/ejemplo-historia.mp4" type="video/mp4">
-          Tu navegador no soporta vídeo. Descarga el ejemplo en <a href="assets/ejemplo-historia.mp4">assets/ejemplo-historia.mp4</a>.
-        </video>
-        <p style="margin:0;font-size:13px;line-height:1.5"><strong>“Luna, 3 años — donde estaba el Vaporcito”</strong><br><span style="color:var(--ink-2)">“Sueño con correr sin correa donde estaba el Vaporcito. Mi dueña firma por mí. ¿Y tú?”</span> — tu cuento queda así, vertical 9:16, con tu foto, nombre y barrio. Ver <code>viral/con final/Ejemplo — formato histori.mp4</code>.</p>
+        <small>Carrusel — playlist YouTube @ZonaCaninaVaporcito</small>
+        <div id="yt-player-wrap" style="position:relative;aspect-ratio:9/16;max-height:420px;background:#000;border-radius:12px;overflow:hidden">
+          <iframe id="yt-player" title="Historias ZonaCaninaVaporcito — playlist" src="https://www.youtube.com/embed/videoseries?list=UUCD_eqJjcMfRVg489xzx5LFA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+        </div>
+        <div id="yt-carousel" style="display:flex;gap:8px;overflow-x:auto;padding:8px 0 4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch"></div>
+        <p style="margin:4px 0 0;font-size:11px;color:var(--ink-2)">Playlist: subidas de <a href="https://www.youtube.com/@ZonaCaninaVaporcito" target="_blank" rel="noopener" style="font-weight:700;color:var(--indigo)">@ZonaCaninaVaporcito</a> (ID canal UCD_eqJjcMfRVg489xzx5LFA → lista UU…). Cambia <code>PLAYLIST_ID</code> en el código para otra lista. Flechas: desliza o usa ← →.</p>
+        <details style="margin-top:8px;background:var(--cream-2);border:1px solid var(--line);border-radius:10px;padding:8px 10px"><summary style="font-size:12px;font-weight:800;cursor:pointer">Ver ejemplo local (fallback) — viral/con final/Ejemplo — formato histori.mp4</summary>
+          <video controls playsinline poster="assets/vista-primavera.jpg" preload="metadata" style="width:100%;border-radius:10px;margin-top:8px;background:#000" aria-label="Ejemplo local historia vertical">
+            <source src="assets/ejemplo-historia.mp4" type="video/mp4">
+          </video>
+          <p style="margin:6px 0 0;font-size:12px;color:var(--ink-2)"><strong>“Luna, 3 años”</strong> — tu cuento queda vertical 9:16 con tu foto, nombre y barrio. Envía a <a href="mailto:zonacaninavaporcito@gmail.com">zonacaninavaporcito@gmail.com</a>.</p>
+        </details>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"ZonaCaninaVaporcito — Historias en YouTube","itemListElement":[{"@type":"ListItem","position":1,"url":"https://www.youtube.com/playlist?list=UUCD_eqJjcMfRVg489xzx5LFA"}]}</script>
         <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"ZonaCaninaVaporcito — Ejemplo historia vertical","description":"Ejemplo de cuento vertical 9:16 con foto de perro, nombre y barrio para la campaña donde estaba el Vaporcito. Envía tu foto a zonacaninavaporcito@gmail.com.","thumbnailUrl":"https://zonacaninavaporcito.github.io/assets/vista-primavera.jpg","uploadDate":"2026-08-28","contentUrl":"https://zonacaninavaporcito.github.io/assets/ejemplo-historia.mp4","embedUrl":"https://zonacaninavaporcito.github.io/#perros","duration":"PT30S","publisher":{"@type":"Organization","name":"ZonaCaninaVaporcito","logo":{"@type":"ImageObject","url":"https://zonacaninavaporcito.github.io/assets/logo.png"}}}</script>
+        <script>
+        (function(){
+          const PLAYLIST_ID = 'UUCD_eqJjcMfRVg489xzx5LFA'; // cambia a PL... para playlist custom
+          const CHANNEL_ID = 'UCD_eqJjcMfRVg489xzx5LFA';
+          const player = document.getElementById('yt-player');
+          const carousel = document.getElementById('yt-carousel');
+          // Intenta cargar carrusel de miniaturas desde RSS (sin API key) para AEO/SEO
+          const rssUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
+          const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
+          fetch(proxy).then(r=>r.json()).then(j=>{
+            const xml = j.contents;
+            const ids = [...xml.matchAll(/<yt:videoId>([^<]+)<\/yt:videoId>/g)].map(m=>m[1]).slice(0,12);
+            const titles = [...xml.matchAll(/<title>([^<]+)<\/title>/g)].map(m=>m[1]).slice(1,13);
+            if(!ids.length) throw new Error('no ids');
+            carousel.innerHTML = ids.map((id,i)=>`
+              <button data-id="${id}" aria-label="${(titles[i]||'Vídeo').replace(/"/g,'')}" style="flex:0 0 110px;scroll-snap-align:start;border:1.5px solid var(--line-strong);border-radius:12px;overflow:hidden;background:#fff;padding:0;cursor:pointer">
+                <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="" width="110" height="62" style="width:100%;height:62px;object-fit:cover;display:block">
+                <span style="display:block;font-size:11px;font-weight:700;line-height:1.3;padding:6px 6px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(titles[i]||'Historia').slice(0,26)}</span>
+              </button>
+            `).join('');
+            carousel.querySelectorAll('button').forEach(btn=>{
+              btn.addEventListener('click',()=>{
+                const id = btn.getAttribute('data-id');
+                player.src = 'https://www.youtube.com/embed/' + id + '?rel=0&autoplay=1';
+                carousel.querySelectorAll('button').forEach(b=>b.style.outline='');
+                btn.style.outline='3px solid var(--albero)';
+              });
+            });
+            // primera selección
+            if(carousel.firstElementChild) carousel.firstElementChild.style.outline='3px solid var(--albero)';
+          }).catch(()=>{
+            // fallback: muestra 3 miniaturas genéricas que abren la playlist
+            carousel.innerHTML = '<p style="font-size:12px;color:var(--ink-2);padding:8px">No se pudo cargar miniaturas. Usa el player de arriba — es tu playlist completa.</p>';
+          });
+        })();
+        </script>
       </div>
     </div>
   </section>
