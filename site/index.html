@@ -155,8 +155,8 @@
       </div>
       <div class="dogs-example">
         <small>Carrusel — playlist YouTube @ZonaCaninaVaporcito</small>
-        <div id="yt-player-wrap" style="position:relative;aspect-ratio:16/9;max-height:420px;background:#000;border-radius:12px;overflow:hidden">
-          <iframe id="yt-player" title="Historias ZonaCaninaVaporcito — playlist PLISaY0oQ5et4" src="https://www.youtube.com/embed/videoseries?list=PLISaY0oQ5et4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+        <div id="yt-player-wrap" style="position:relative;aspect-ratio:9/16;max-height:640px;max-width:360px;margin:0 auto;background:#000;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.18)">
+          <iframe id="yt-player" title="Historias ZonaCaninaVaporcito — playlist vertical PLISaY0oQ5et4" src="https://www.youtube.com/embed/videoseries?list=PLISaY0oQ5et4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
         </div>
         <div id="yt-carousel" style="display:flex;gap:8px;overflow-x:auto;padding:8px 0 4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch"></div>
         <p style="margin:4px 0 0;font-size:11px;color:var(--ink-2)">Playlist: <a href="https://www.youtube.com/playlist?list=PLISaY0oQ5et4" target="_blank" rel="noopener" style="font-weight:700;color:var(--indigo)">PLISaY0oQ5et4</a> — portadas de cada vídeo. Invita a ver: “toca la portada para reproducir”.</p>
@@ -183,9 +183,9 @@
             const titles = [...xml.matchAll(/<title>([^<]+)<\/title>/g)].map(m=>m[1]).slice(1,13);
             if(!ids.length) throw new Error('no ids');
             carousel.innerHTML = ids.map((id,i)=>`
-              <button data-id="${id}" aria-label="${(titles[i]||'Vídeo').replace(/"/g,'')}" style="flex:0 0 110px;scroll-snap-align:start;border:1.5px solid var(--line-strong);border-radius:12px;overflow:hidden;background:#fff;padding:0;cursor:pointer">
-                <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="" width="110" height="62" style="width:100%;height:62px;object-fit:cover;display:block">
-                <span style="display:block;font-size:11px;font-weight:700;line-height:1.3;padding:6px 6px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(titles[i]||'Historia').slice(0,26)}</span>
+              <button data-id="${id}" aria-label="${(titles[i]||'Vídeo').replace(/"/g,'')}" style="flex:0 0 92px;scroll-snap-align:start;border:1.5px solid var(--line-strong);border-radius:12px;overflow:hidden;background:#fff;padding:0;cursor:pointer">
+                <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="" width="92" height="164" style="width:100%;height:92px;object-fit:cover;display:block;aspect-ratio:9/16;object-position:center">
+                <span style="display:block;font-size:10px;font-weight:700;line-height:1.3;padding:5px 6px 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${(titles[i]||'Historia').slice(0,22)}</span>
               </button>
             `).join('');
             carousel.querySelectorAll('button').forEach(btn=>{
